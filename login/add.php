@@ -35,6 +35,6 @@ else{
     mysqli_query($link, $query);
 
 
-    header('location:list.php');
+    header('location:welcome.php');
 }
 ?>

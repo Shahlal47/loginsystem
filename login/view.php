@@ -29,6 +29,7 @@ $result = mysqli_query($link, $query);
 
 <ul>
     <li><a href="registration.php">Add New User</a> </li>
+    <li><a href="list.php">View All User</a> </li>
 </ul>
 <table border="1" width="100%">
     <tr>

@@ -6,17 +6,17 @@
     <body style="text-align: center;">
         <tr>
             <td>
-        <a href="index.php">Home</a> |
-        <a href="login.php">Login</a> |
-        <a href="registration.php">Register</a> |
-        <a href="contact.php">Contact</a> |
-        <a href="help.php">Help</a>
-
-    </td>
+                <a href="index.php">Home</a> |
+                <a href="login.php">Login</a> |
+                <a href="registration.php">Register</a> |
+                <a href="contact.php">Contact</a> |
+                <a href="help.php">Help</a>
+            </td>
         </tr>
     </body>
 </html>
 
+<br><br><br><br>
 
 <?php
 
@@ -25,14 +25,18 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 //echo $password;
 
+$id = $_GET['id'];
+
 $link = mysqli_connect("localhost", "root", "lict@2", "loginsystem");
 
-$query = "SELECT * FROM users WHERE username = $username";
+$query = "SELECT * FROM users WHERE id = $id";
 
 $result = mysqli_query($link, $query);
 
 $row = mysqli_fetch_assoc($result);
 
+//echo $row;
+//print_r($row);
 //var_dump($row['username']);
 //exit;
 

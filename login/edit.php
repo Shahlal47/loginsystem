@@ -1,7 +1,7 @@
 <?php
 $id = $_GET['id'];
 $link = mysqli_connect("localhost", "root", "lict@2", "loginsystem");
-$query = "select * from users WHERE id = $id";
+$query = "SELECT * FROM users WHERE id = $id";
 $result = mysqli_query($link, $query);
 $row = mysqli_fetch_assoc($result);
 
@@ -21,38 +21,39 @@ $row = mysqli_fetch_assoc($result);
     </head>
 
     <body style="text-align: center;">
-        <form action="update.php" method="post">
 
-            <tr>
-                <td>
+        <ul style="none">
+            <li>
 
-                    <a href="index.php">Home</a> |
-                    <a href="login.php">Login</a> |
-                    <a href="registration.php">Register</a> |
-                    <a href="contact.php">Contact</a> |
-                    <a href="help.php">Help</a>
+                <a href="index.php">Home</a> |
+                <a href="login.php">Login</a> |
+                <a href="registration.php">Register</a> |
+                <a href="contact.php">Contact</a> |
+                <a href="help.php">Help</a>
 
-                </td>
-            </tr>
+            </li>
+        </ul>
+
 
             <br><br><br><br><br><br>
+
+        <form action="update.php" method="post">
 
             <input type="hidden" name="id" value="<?php echo $row['id'];?>">
 
             <label>Name:</label>
-            <input type="text" name="<?php echo $row['name'];?>"><br><br>
+            <label><input type="text" name="name" value="<?php echo $row['name'];?>"></label><br><br>
 
             <label>Email:</label>
-            <input type="email" name="<?php echo $row['email'];?>"><br><br>
+            <label><input type="email" name="email" value="<?php echo $row['email'];?>"></label><br><br>
 
             <label>Username:</label>
-            <input type="text" name="<?php echo $row['username'];?>"><br><br>
+            <label><input type="text" name="username" value="<?php echo $row['username'];?>"></label><br><br>
 
             <label>Password:</label>
-            <input type="password" name="<?php echo $row['password'];?>"><br><br>
+            <label><input type="password" name="password" value="<?php echo $row['password'];?>"></label><br><br>
 
             <input type="submit" name="submit" value="Update">
         </form>
-
     </body>
 </html>

@@ -11,8 +11,8 @@ $result = mysqli_query($link, $query);
     <body style="text-align: center;">
 
 
-    <tr>
-        <td>
+    <ul style="none">
+        <li>
 
             <a href="index.php">Home</a> |
             <a href="login.php">Login</a> |
@@ -20,8 +20,9 @@ $result = mysqli_query($link, $query);
             <a href="contact.php">Contact</a> |
             <a href="help.php">Help</a>
 
-        </td>
-    </tr>
+        </li>
+    </ul>
+
 
 
     <ul>

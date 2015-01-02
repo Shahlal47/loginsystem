@@ -19,5 +19,5 @@ $query = "UPDATE `loginsystem`.`users` SET `name` = '".$name."',
 
 mysqli_query($link, $query);
 
-header('location:list.php');
+//header('location:list.php');
 ?>
