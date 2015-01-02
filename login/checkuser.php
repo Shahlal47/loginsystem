@@ -25,11 +25,10 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 //echo $password;
 
-$id = $_GET['id'];
 
 $link = mysqli_connect("localhost", "root", "lict@2", "loginsystem");
 
-$query = "SELECT * FROM users WHERE id = $id";
+$query = "SELECT * FROM users WHERE `username` = '$username'";
 
 $result = mysqli_query($link, $query);
 
@@ -38,15 +37,24 @@ $row = mysqli_fetch_assoc($result);
 //echo $row;
 //print_r($row);
 //var_dump($row['username']);
+//var_dump($row['password']);
+//var_dump($row['email']);
 //exit;
-
-
 
 if($row != "NULL"){
     if(($username == $row['username']) && ($password == $row['password'])){
 
-        header('location:dashboard.php');
         //(SEND Data to the SESSION and GO to The Dashboard)
+
+        session_start();
+        $_SESSION['id']=$row['id'];
+        $_SESSION['name']=$row['name'];
+        $_SESSION['email']=$row['email'];
+        $_SESSION['username']=$row['username'];
+        $_SESSION['created']=$row['created'];
+
+        header('location: dashboard.php');
+
 
     }
     else{
