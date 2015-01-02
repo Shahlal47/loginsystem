@@ -1,7 +1,11 @@
+<?php session_start() ?>
+
+
 
 <html>
     <head>
         <title>Welcome to Login System</title>
+
     </head>
 
     <body style="text-align: center;">
@@ -22,6 +26,7 @@
 
 
             <br><br><br><br><br><br>
+
             <tr><td>Username:</td></tr>
             <tr><td><input type="text" name="username"></td></tr><br>
 
@@ -35,3 +40,11 @@
 </html>
 
 
+
+<?php if(isset($_SESSION['msgname']))  echo $_SESSION['msgname']; ?><br>
+<?php if(isset($_SESSION['msgpass']))  echo $_SESSION['msgpass']; ?>
+<?php session_unset() ?>
+
+
+
+<?php if(isset($_SESSION['msg']))  echo $_SESSION['msg']; ?><br>

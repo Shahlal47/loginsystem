@@ -28,13 +28,12 @@ echo "<br>";
 
 session_start();
 
-if(array_key_exists('loggedin', $_SESSION)){
 
-    echo "Hello Dear User!!! You are in Dashboard.";
+if(isset($_SESSION['name'])){
+    echo "Hello " . $_SESSION['name'] . "<br>";
+    echo "Your email is " .$_SESSION['email']. "<br>";
+    echo "You are Registered at " . $_SESSION['created'] . "<br>";
 }
 else{
-
     header("location:index.php");
 }
-
-?>
